@@ -1,0 +1,17 @@
+version: '2'
+services:
+  yj_web:
+    container_name: wechat
+    image: wechat:0.0.1
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1g"
+    ports:
+      - "10000:10000"
+    volumes:
+      - ./:/conf
+      #    environment:
+      #      - --spring.config.location=/conf/application.yml
+      #      - --spring.profiles.active=test
