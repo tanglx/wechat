@@ -2,7 +2,7 @@ version: '2'
 services:
   yj_web:
     container_name: wechat
-    image: wechat:0.0.1
+    image: wechat:latest
     restart: always
     logging:
       driver: "json-file"
