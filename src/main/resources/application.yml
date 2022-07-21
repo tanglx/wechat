@@ -87,5 +87,5 @@ mybatis-plus:
 wechat:
   appid: wxe323a3ff8027d3db
   secret: 85deb25a1ee5b6ed0081b1bfb9c1bb55
-  token:
-  encodingAESKey:
+  token: tanglingxiao
+  encodingAESKey: 6lS7dL7UjRqaw2NOvndKQkYthkeMSV9MZxExQMzYpvA
