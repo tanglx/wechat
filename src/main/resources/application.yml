@@ -89,3 +89,35 @@ wechat:
   secret: 85deb25a1ee5b6ed0081b1bfb9c1bb55
   token: tanglingxiao
   encodingAESKey: 6lS7dL7UjRqaw2NOvndKQkYthkeMSV9MZxExQMzYpvA
+
+#wx:
+#  mp:
+#    useRedis: true
+#    redisConfig:
+#      host: 140.143.231.91
+#      port: 6379
+#      timeout: 2000
+#    configs:
+#      - appId: wxe323a3ff8027d3db # 第一个公众号的appid
+#        secret: 85deb25a1ee5b6ed0081b1bfb9c1bb55 # 公众号的appsecret
+#        token: tanglingxiao # 接口配置里的Token值
+#        aesKey: 6lS7dL7UjRqaw2NOvndKQkYthkeMSV9MZxExQMzYpvA # 接口配置里的EncodingAESKey值
+wx:
+  mp:
+    aesKey: 6lS7dL7UjRqaw2NOvndKQkYthkeMSV9MZxExQMzYpvA
+    appId: wxe323a3ff8027d3db
+    secret: 85deb25a1ee5b6ed0081b1bfb9c1bb55
+    token: tanglingxiao
+    config-storage:
+      # http客户端配置
+      http-client-type: HttpClient
+      http-proxy-host:
+      http-proxy-password:
+      http-proxy-port:
+      http-proxy-username:
+      # 存储配置redis
+      key-prefix: 123123
+      type: RedisTemplate
+      redis:
+        host: 127.0.0.1
+        port: 6379

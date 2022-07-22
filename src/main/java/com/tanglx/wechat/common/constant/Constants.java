@@ -46,5 +46,10 @@ public class Constants {
      */
     public static final String WECHAT_ACCESS_TOKEN = "WECHAT_ACCESS_TOKEN";
 
+    /**
+     * 微信Access_token过期时间
+     */
+    public static final int WECHAT_ACCESS_TOKEN_EXP = 7000;
+
 
 }
