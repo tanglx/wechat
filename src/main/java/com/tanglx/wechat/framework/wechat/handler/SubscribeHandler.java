@@ -21,7 +21,6 @@ public class SubscribeHandler extends AbstractHandler {
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage, Map<String, Object> context, WxMpService weixinService, WxSessionManager sessionManager) throws WxErrorException {
 
         this.logger.info("新关注用户 OPENID: " + wxMessage.getFromUser());
-        System.out.println("新关注用户 OPENID: " + wxMessage.getFromUser());
 
         // 获取微信用户基本信息
         try {

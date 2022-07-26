@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -123,49 +124,49 @@ public class WxMpConfiguration {
     }
 
 
-//    public static void main(String[] args) {
-//        String className = "com.tanglx.wechat.service.TestService";
-//        try {
-//            Object obj = Class.forName(className).newInstance();
-//            Class c = obj.getClass();
-//            Method method = c.getMethod("aa");
-//            Class<?>[] paramType = method.getParameterTypes();
-//            String returnType = String.valueOf(method.getReturnType());
-//            if ("void".equals(returnType)) {
-//                method.invoke(obj);
-//                System.out.println("循环：" + 1 + "   方法名：" + method.getName() + "   方法参数类型：" + paramType + "   方法返回类型：" + returnType);
-//            } else {
-//                Object return1 = null;
-//                if (paramType.length > 0) {
-//                    return1 = method.invoke(obj, "param");
+    public static void main(String[] args) {
+        String className = "com.tanglx.wechat.service.TestService";
+        try {
+            Object obj = Class.forName(className).newInstance();
+            Class c = obj.getClass();
+            Method method = c.getMethod("aa");
+            Class<?>[] paramType = method.getParameterTypes();
+            String returnType = String.valueOf(method.getReturnType());
+            if ("void".equals(returnType)) {
+                method.invoke(obj);
+                System.out.println("循环：" + 1 + "   方法名：" + method.getName() + "   方法参数类型：" + paramType + "   方法返回类型：" + returnType);
+            } else {
+                Object return1 = null;
+                if (paramType.length > 0) {
+                    return1 = method.invoke(obj, "param");
+                } else {
+                    return1 = method.invoke(obj);
+                }
+                System.out.println("循环：" + 1 + "   方法名：" + method.getName() + "   方法参数类型:" + paramType + "   方法返回类型:" + returnType + "   方法返回值:" + return1);
+            }
+
+//            Method[] methods = c.getMethods();
+//            for (int i = 0; i < methods.length; i++) {
+//                Method method = methods[i];
+//                Class<?>[] paramType = method.getParameterTypes();
+//                String returnType = String.valueOf(method.getReturnType());
+//                if ("void".equals(returnType)) {
+//                    System.out.println("循环：" + i + "   方法名：" + methods[i].getName() + "   方法参数类型：" + paramType + "   方法返回类型：" + returnType);
 //                } else {
-//                    return1 = method.invoke(obj);
+//                    Object return1 = null;
+//                    if (paramType.length > 0) {
+//                        return1 = method.invoke(obj, "param");
+//                    } else {
+//                        return1 = method.invoke(obj);
+//                    }
+//                    System.out.println("循环：" + i + "   方法名：" + methods[i].getName() + "   方法参数类型:" + paramType + "   方法返回类型:" + returnType + "   方法返回值:" + return1);
 //                }
-//                System.out.println("循环：" + 1 + "   方法名：" + method.getName() + "   方法参数类型:" + paramType + "   方法返回类型:" + returnType + "   方法返回值:" + return1);
-//            }
-//
-////            Method[] methods = c.getMethods();
-////            for (int i = 0; i < methods.length; i++) {
-////                Method method = methods[i];
-////                Class<?>[] paramType = method.getParameterTypes();
-////                String returnType = String.valueOf(method.getReturnType());
-////                if ("void".equals(returnType)) {
-////                    System.out.println("循环：" + i + "   方法名：" + methods[i].getName() + "   方法参数类型：" + paramType + "   方法返回类型：" + returnType);
-////                } else {
-////                    Object return1 = null;
-////                    if (paramType.length > 0) {
-////                        return1 = method.invoke(obj, "param");
-////                    } else {
-////                        return1 = method.invoke(obj);
-////                    }
-////                    System.out.println("循环：" + i + "   方法名：" + methods[i].getName() + "   方法参数类型:" + paramType + "   方法返回类型:" + returnType + "   方法返回值:" + return1);
-////                }
-////        }
-//        } catch (
-//                Exception e) {
-//            throw new RuntimeException("创建对象失败", e);
 //        }
-//
-//    }
+        } catch (
+                Exception e) {
+            throw new RuntimeException("创建对象失败", e);
+        }
+
+    }
 
 }

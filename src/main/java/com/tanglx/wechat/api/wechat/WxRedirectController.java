@@ -1,4 +1,4 @@
-package com.tanglx.wechat.api;
+package com.tanglx.wechat.api.wechat;
 
 import lombok.AllArgsConstructor;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
