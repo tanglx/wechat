@@ -71,6 +71,27 @@ spring:
         min-idle: 0
         max-wait: 1000ms
       shutdown-timeout: 100ms
+  quartz:
+    job-store-type: jdbc # quartz任务存储类型：jdbc或memory
+    wait-for-jobs-to-complete-on-shutdown: true # 关闭时等待任务完成
+    overwrite-existing-jobs: true # 可以覆盖已有的任务
+    jdbc:
+      initialize-schema: never # 是否自动使用 SQL 初始化 Quartz 表结构
+    properties: # quartz原生配置
+      org:
+        quartz:
+          scheduler:
+            instanceName: scheduler # 调度器实例名称
+            instanceId: AUTO # 调度器实例ID自动生成
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX # 调度信息存储处理类
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate # 使用完全兼容JDBC的驱动
+            tablePrefix: QRTZ_ # quartz相关表前缀
+            useProperties: false # 是否将JobDataMap中的属性转为字符串存储
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool # 指定线程池实现类，对调度器提供固定大小的线程池
+            threadCount: 10 # 设置并发线程数量
+            threadPriority: 5 # 指定线程优先级
 
 mybatis-plus:
   configuration:
@@ -94,10 +115,10 @@ wx:
   mp:
     useRedis: true
     redisConfig:
-      host: 140.143.231.91
-      port: 6379
+      host: ${spring.redis.host}
+      port: ${spring.redis.port}
+      password: ${spring.redis.password}
       timeout: 2000
-      password: 123123
     configs:
       - appId: wxe323a3ff8027d3db # 第一个公众号的appid
         secret: 85deb25a1ee5b6ed0081b1bfb9c1bb55 # 公众号的appsecret
